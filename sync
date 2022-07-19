@@ -15,7 +15,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # local manifest
 git clone --depth=1 https://github.com/$CIRRUS_REPO_OWNER/device_xiaomi_whyred -b master device/xiaomi/whyred
 git clone --depth=1 https://github.com/$CIRRUS_REPO_OWNER/vendor_xiaomi_whyred -b master vendor/xiaomi/whyred
-git clone --depth=1 https://github.com/$CIRRUS_REPO_OWNER/kernel_xiaomi_whyred -b master kernel/xiaomi/whyred
+git clone --depth=1 https://github.com/$CIRRUS_REPO_OWNER/android_kernel_xiaomi_whyred -b master kernel/xiaomi/whyred
 
 tg "Cloned all Sources Successfully!
 Time Took: $(($SECONDS / 60)) minute(s) and $(($SECONDS % 60)) second(s).
