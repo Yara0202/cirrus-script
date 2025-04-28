@@ -7,15 +7,22 @@ cd /tmp/rom
 SECONDS=0
 
 # Sync source
-repo init --depth=1 --no-repo-verify -u https://github.com/PixelOS-Pixelish/manifest -b twelve -g default,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u https://github.com/Yara0202/android -b lineage-17.1 -g default,-mips,-darwin,-notdefault
 
 # Sync source without unnecessary messages, try with -j30 first, if fails, it will try again
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc --all) || repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc --all)
 
 # local manifest
-git clone --depth=1 https://github.com/$CIRRUS_REPO_OWNER/device_xiaomi_whyred -b master device/xiaomi/whyred
-git clone --depth=1 https://github.com/$CIRRUS_REPO_OWNER/vendor_xiaomi_whyred -b master vendor/xiaomi/whyred
-git clone --depth=1 https://github.com/$CIRRUS_REPO_OWNER/android_kernel_xiaomi_whyred -b master kernel/xiaomi/whyred
+git clone https://github.com/Wrdn28/android_device_xiaomi_ginkgo -b 10 device/xiaomi/ginkgo
+git clone https://github.com/andrraa/android_vendor_xiaomi_ginkgo -b 10 vendor/xiaomi/ginkgo --depth=1
+git clone https://github.com/Wrdn28/hyper_kernel_ginkgo -b A10 kernel/xiaomi/ginkgo --depth=1
+git clone https://github.com/andrraa/android_vendor_miuicamera -b 10 vendor/miuicamera
+rm -rf hardware/qcom-caf/sm8150/{audio,display,media}
+git clone https://github.com/Nusantara-ROM/android_hardware_qcom_display -b 10-sm8150 hardware/qcom-caf/sm8150/display
+git clone https://github.com/Nusantara-ROM/android_hardware_qcom_media -b 10-sm8150 hardware/qcom-caf/sm8150/media
+git clone https://github.com/Nusantara-ROM/android_hardware_qcom_audio -b 10-sm8150 hardware/qcom-caf/sm8150/audio
+git clone https://github.com/kdrag0n/proton-clang -b master prebuilts/clang/host/linux-x86/proton-clang --depth=1
+git clone https://github.com/Wrdn28/keys -b A10 vendor/lineage/signing
 
 tg "Cloned all Sources Successfully!
 Time Took: $(($SECONDS / 60)) minute(s) and $(($SECONDS % 60)) second(s).

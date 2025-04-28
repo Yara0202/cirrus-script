@@ -3,12 +3,12 @@ env: # Environment variables to pass to all tasks
     CIRRUS_WORKING_DIR: "/tmp/ci" # Where to clone the aosp-builder repo
 
 # store our secrets here
-    github_token: "ENCRYPTED[!7eea1d077dcb1249c283a5f797cc7e3ac8a7b85881342b53d25a46274fc7224e5235b3d361b9ee6ed38ce07c587aa27d!]"
-    bot_api: "ENCRYPTED[!f680123f5fac6aa8c9c88bca28870d730c59caa9b64063f91075cd5106608e6b3fa047bbfe6c75f1e7668b5def7262e6!]"
-    chat_id: "ENCRYPTED[!e0d4ff9f6d664f2b111be5ac3a8c4754f1f05661243c846e5ea5f3c24f11ceef45e13165eee4a1098c3634d181a7406c!]"
+    github_token: "ENCRYPTED[!630b836f70acf32da17712abf49e6cedc395fbf7adfa3023b34bd64a516640e03f3e133b4feefb1f723e36472592a6b8!]"
+    bot_api: "ENCRYPTED[!78df93af52b276deba904023576dbf45df5be7a833cb3a83509bcc6af9981f3a8882bf67dadc2ab4a786279a38f2e390!]"
+    chat_id: "ENCRYPTED[!a264d4e3e40adec008386e2db5ad751254dd8abf8120ffeb6e79733aae14ccc4f64f4b02d9be49116be00cad64474dc4!]"
 
 # store information about git here
-    gmail: vishal.rockstar7011@gmail.com
+    gmail: doodle280204@gmail.com
 
 task:
     name: aosp
